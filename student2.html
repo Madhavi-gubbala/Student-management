@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .student-photo img {
+            max-width: 200px; /* Adjust the maximum width as needed */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center the image horizontally */
+        }
+        .student-info {
+            text-align: center;
+            margin-top: 20px; /* Add margin to separate student info from photo */
+        }
+        .section {
+            display: none;
+        }
+        footer {
+          background-color: black;
+          color: white;
+          text-align: center;
+          padding: 10px;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Spring Flowers School</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#studentProfile">Student Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Timetable">Time Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                        
+                </ul>
+            </div>
+        </nav>
+        <div class="logo">
+            <img src="logo.png" alt="School Logo" class="img-fluid">
+        </div>
+    </header>
+    <main>
+        <section class="section" id="home">
+            <div class="container">
+                <h2>Welcome to Spring Flowers School</h2>
+                <p>Hello there! Welcome to our school website. We are delighted to have you here.</p>
+                <p>Feel free to explore the information about our school, student profiles, and contact details.</p>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="container">
+                <h2>About Spring Flowers School</h2>
+                <p>This is the about section. Add your about content here.</p>
+            </div>
+        </section>
+        <section class="section" id="Timetable">
+            <div class="container">
+            <h2>School Time Table</h2>
+            <table class="timetable">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Subject</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>9:00 AM - 11:00 AM</td>
+                        <td>Mathematics</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                        <td>Science</td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>1:00 AM - 3:00AM</td>
+                        <td>Social</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </section>
+        <section class="student-details section" id="studentProfile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="student-photo">
+                            <img src="image.png" alt="Student Photo" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="student-info">
+                            <h2>Madhavi</h2>
+                            <p>Class: 10th Grade</p>
+                            <p>Roll Number: 123456</p>
+                            <p>DOB: June 25, 2004</p>
+                            <p>Address: 123 School Street, City, Country</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>This is the contact section. Add your contact information here.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Spring Flowers School. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS (optional, only if you need it) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to show only the clicked section
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const sections = document.querySelectorAll('.section');
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
